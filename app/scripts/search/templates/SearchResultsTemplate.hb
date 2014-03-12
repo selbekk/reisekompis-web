@@ -1,4 +1,4 @@
-<section class="search-results">
+<section class="search-results section">
     {{#each .}}
     <article class="stop">
         <h1>{{name}}</h1>

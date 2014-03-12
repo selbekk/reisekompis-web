@@ -1,9 +1,9 @@
-<section class="searchBox">
+<section class="search-box section">
     <form>
-        <label for="searchField">{{ title }}</label>
-        <div class="searchFieldWrapper">
-            <input type="text" id="searchField" name="query" autofocus placeholder="{{ placeholder }}"/>
-            <button type="button" name="searchButton" id="searchButton">{{{ searchButton }}}</button>
+        <label for="search-field">{{ title }}</label>
+        <div class="search-field-wrapper">
+            <input type="text" id="search-field" name="query" autofocus placeholder="{{ placeholder }}"/>
+            <button type="button" name="search-button" id="search-button">{{{ searchButton }}}</button>
         </div>
     </form>
 </section>

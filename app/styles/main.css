@@ -16,6 +16,10 @@ html, body {
 }
 
 .wrapper {
-    margin: 5% auto 0;
+    margin: 0 auto;
     max-width: 600px;
+}
+
+.section {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }

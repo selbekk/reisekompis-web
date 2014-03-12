@@ -9,6 +9,14 @@
 
         var template = JST['app/scripts/search/templates/SearchResultsTemplate.hb'];
 
+        this.destroy = function() {
+            // TODO: Destroy
+        };
+
+        this.show = function() {
+            render();
+        };
+
         var render = function() {
             $el.html(template(searchResults));
 
@@ -44,7 +52,6 @@
         var init = function(pView, results) {
             $el = pView;
             searchResults = results;
-            render();
         };
 
         init(pView, results);

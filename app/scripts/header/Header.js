@@ -28,7 +28,7 @@
         };
 
         var updateHeader = function(event) {
-            var opts = event.content;
+            var opts = event;
             render(opts);
         };
 

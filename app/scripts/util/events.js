@@ -19,7 +19,7 @@
     Reisekompis.events.ViewChanged = function(options) {
         return {
             type: 'ViewChanged',
-            headerOpts: options.headerOpts,
+            title: options.title,
             newView: options.view
         };
     };

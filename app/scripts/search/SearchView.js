@@ -13,9 +13,13 @@
             // TODO: destroy
         };
 
+        this.show = function() {
+            render();
+        };
+
         var bindTemplateEvents = function() {
-            $el.on('click', '#searchButton', formHandler);
-            $el.on('keypress', '#searchField', formHandler);
+            $el.on('click', '#search-button', formHandler);
+            $el.on('keypress', '#search-field', formHandler);
         };
 
         var formHandler = function(event) {
@@ -25,7 +29,7 @@
 
             event.preventDefault();
 
-            var query = $el.find('#searchField').val();
+            var query = $el.find('#search-field').val();
             search(query);
         };
 
@@ -53,7 +57,6 @@
 
         var init = function(pView) {
             $el = pView;
-            render();
         };
 
         init(pView);
