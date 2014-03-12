@@ -44,7 +44,7 @@
             var texts = {
                 title: 'Hvor skal du reise fra?',
                 placeholder: 'f.eks. Majorstuen',
-                searchButton: 'søk'
+                searchButton: '&raquo;'
             };
             $el.html(template(texts));
 
