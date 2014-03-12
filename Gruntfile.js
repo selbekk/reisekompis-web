@@ -32,7 +32,7 @@ module.exports = function (grunt) {
                 tasks: ['bowerInstall']
             },
             js: {
-                files: ['<%= config.app %>/scripts/{,*/}*.js'],
+                files: ['<%= config.app %>/scripts/**/*.js'],
                 tasks: ['jshint'],
                 options: {
                     livereload: true
@@ -120,7 +120,8 @@ module.exports = function (grunt) {
             },
             all: [
                 'Gruntfile.js',
-                '<%= config.app %>/scripts/{,*/}*.js',
+                '<%= config.app %>/scripts/**/*.js',
+                '!<%= config.app %>/scripts/templates.js',
                 '!<%= config.app %>/scripts/vendor/*',
                 'test/spec/{,*/}*.js'
             ]
@@ -164,7 +165,7 @@ module.exports = function (grunt) {
             dist: {
                 files: {
                     src: [
-                        '<%= config.dist %>/scripts/{,*/}*.js',
+                        '<%= config.dist %>/scripts/**/*.js',
                         '<%= config.dist %>/styles/{,*/}*.css',
                         '<%= config.dist %>/images/{,*/}*.*',
                         '<%= config.dist %>/styles/fonts/{,*/}*.*',
@@ -302,9 +303,22 @@ module.exports = function (grunt) {
                 'imagemin',
                 'svgmin'
             ]
+        },
+
+        // Precompile Handlebars templates
+        handlebars: {
+            all: {
+                options: {
+                    namespace: 'JST'
+                },
+                files: {
+                    '<%= config.app %>/scripts/templates.js': ['**/templates/*.hb']
+                }
+            }
         }
     });
 
+    grunt.loadNpmTasks('grunt-contrib-handlebars');
 
     grunt.registerTask('serve', function (target) {
         if (target === 'dist') {
@@ -345,6 +359,7 @@ module.exports = function (grunt) {
         'useminPrepare',
         'concurrent:dist',
         'autoprefixer',
+        'handlebars',
         'concat',
         'cssmin',
         'uglify',

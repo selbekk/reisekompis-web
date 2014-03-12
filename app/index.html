@@ -19,16 +19,29 @@
         <!-- endbuild -->
     </head>
     <body>
-        <div class="app"></div>
+        <div id="app"></div>
 
 
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
         <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/underscore/underscore.js"></script>
+        <script src="bower_components/handlebars/handlebars.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 
+        <!-- build:js({app,.tmp}) scripts/templates.js -->
+        <script src="scripts/templates.js"></script>
+        <!-- endbuild -->
+
         <!-- build:js({app,.tmp}) scripts/main.js -->
+        <script src="scripts/namespace.js"></script>
+
+        <script src="scripts/search/SearchView.js"></script>
+        <script src="scripts/search/SearchRepository.js"></script>
+        <script src="scripts/search/SearchController.js"></script>
+
+        <script src="scripts/App.js"></script>
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
 </body>
