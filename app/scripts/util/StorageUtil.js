@@ -21,6 +21,13 @@
             return JSON.parse(value);
         };
 
+        this.getAll = function() {
+            var keys = Object.keys(localStorage);
+            return $.map(keys, function(key) {
+                return localStorage.get(key);
+            });
+        };
+
         this.remove = function(key) {
             localStorage.removeItem(key);
         };

@@ -28,8 +28,7 @@
         };
 
         var updateHeader = function(event) {
-            var opts = event;
-            render(opts);
+            render(event);
         };
 
         var initEvents = function() {
