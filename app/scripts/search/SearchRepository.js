@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    var SearchForStopsResponse = Reisekompis.events.SearchForStopsResponse;
+    var SearchForStopsResponse = Reisekompis.events.SearchForStopsReceived;
     var SearchResult = Reisekompis.search.SearchResult;
     var settings = Reisekompis.settings;
 
@@ -18,12 +18,11 @@
         };
 
         var searchForCustomersSuccess = function(data) {
-
             $.event.trigger(new SearchForStopsResponse(data));
         };
 
         var initEvents = function() {
-            $(document).on('SearchForStopsRequest', searchForCustomers);
+            $(document).on('SearchForStopsRequested', searchForCustomers);
         };
 
         var init = function() {

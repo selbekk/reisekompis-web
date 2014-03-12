@@ -1,14 +1,17 @@
 (function() {
     'use strict';
 
-    var SearchForStopsRequest = Reisekompis.events.SearchForStopsRequest;
+    var SearchForStopsRequest = Reisekompis.events.SearchForStopsRequested;
     var Spinner = Reisekompis.util.Spinner;
 
     Reisekompis.search.SearchView = function(pView) {
 
         var template = JST['app/scripts/search/templates/SearchTemplate.hb'];
-
         var $el;
+
+        this.destroy = function() {
+            // TODO: destroy
+        };
 
         var bindTemplateEvents = function() {
             $el.on('click', '#searchButton', formHandler);
@@ -27,26 +30,15 @@
         };
 
         var search = function(query) {
-            $(document).on('SearchForStopsResponse', searchResultReceived);
             startLoading();
             $.event.trigger(new SearchForStopsRequest(query));
         };
 
-        var searchResultReceived = function(event) {
-            $(document).off('SearchForStopsResponse', searchResultReceived);
-            stopLoading();
-
-            var stops = event.response;
-            console.log(stops);
-        };
 
         var startLoading = function() {
             $el.append(new Spinner({loading: true, large: true}));
         };
 
-        var stopLoading = function() {
-            $el.remove('.spinner');
-        };
 
         var render = function() {
             var texts = {

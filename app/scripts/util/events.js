@@ -2,16 +2,16 @@
 
     'use strict';
 
-    Reisekompis.events.SearchForStopsRequest = function(query) {
+    Reisekompis.events.SearchForStopsRequested = function(query) {
         return {
-            type: 'SearchForStopsRequest',
+            type: 'SearchForStopsRequested',
             query: query
         };
     };
 
-    Reisekompis.events.SearchForStopsResponse = function(response) {
+    Reisekompis.events.SearchForStopsReceived = function(response) {
         return {
-            type: 'SearchForStopsResponse',
+            type: 'SearchForStopsReceived',
             response: response
         };
     };

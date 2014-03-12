@@ -18,18 +18,14 @@
 
         var deserialize = function(data, Type) {
             if( data instanceof Array ) {
-                var objects = [];
-                $.each(data, function(idx, item) {
-                    objects.push(new Type(item));
+                return $.map(data, function(item) {
+                    return new Type(item);
                 });
-                return objects;
             }
             else if (data instanceof Object) {
                 return new Type(data);
             }
-            else {
-                console.log('Unsupported data format (string, number etc) received from server');
-            }
+            console.log('Unsupported data format (string, number etc) received from server');
         };
 
         var ajaxErrorHandler = function(jqXHR, textStatus, errorThrown) {
