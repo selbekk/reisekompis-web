@@ -3,5 +3,7 @@ Reisekompis = {
     util: {},
     events: {},
     settings: {},
+
+    header: {},
     search: {}
 };

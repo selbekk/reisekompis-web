@@ -1,0 +1,29 @@
+#header {
+    background-color: #f08080;
+    padding: 10px;
+}
+
+#header h1 {
+    font-size: 200%;
+    font-weight: bolder;
+    color: white;
+    text-align: center;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+#header nav {
+    display: block;
+    width: 20%;
+    max-width: 40px;
+}
+
+#header .left-nav {
+    float: left;
+    border-right: 1px solid rgba(0,0,0,0.5);
+}
+
+#header .right-nav {
+    float: right;
+    border-left: 1px solid rgba(0,0,0,0.5);
+}

@@ -15,4 +15,12 @@
             response: response
         };
     };
+
+    Reisekompis.events.ViewChanged = function(options) {
+        return {
+            type: 'ViewChanged',
+            headerOpts: options.headerOpts,
+            newView: options.view
+        };
+    };
 }());
