@@ -4,7 +4,8 @@ html, body {
     margin: 0;
     padding: 0;
 
-    font-family: 'helvetica neue light', 'helvetica neue', helvetica, sans-serif;
+    font-family: 'clear sans', 'helvetica neue light', 'helvetica neue', helvetica, sans-serif;
+    font-weight: lighter;
 
     background-color: #666;
 }

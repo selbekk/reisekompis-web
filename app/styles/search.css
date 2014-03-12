@@ -36,9 +36,19 @@
 .searchBox #searchButton {
     display: inline-block;
     width: 14%;
-    height: 30px;
     margin: 0 0 10px 4%;
-    padding: 0;
+    padding: 10px 0;
     border: 0;
     background-color: #f08080;
+    font-family: fontawesome, sans-serif;
+    font-size: 150%;
+    color: white;
+    cursor: pointer;
+}
+
+.searchBox #searchButton:focus,
+.searchBox #searchButton:hover {
+    outline: 0;
+    background-color: #f98989;
+
 }
