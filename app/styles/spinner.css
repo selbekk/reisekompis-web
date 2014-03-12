@@ -1,0 +1,24 @@
+.spinner {
+    width: 55px;
+    height: 55px;
+
+    background: transparent url(../images/ajax-loader.gif) center center no-repeat;
+    background-size: contain;
+
+    margin: 0 auto;
+}
+
+.spinner.small {
+    width: 20px;
+    height: 20px;
+}
+
+.spinner.large {
+    width: 110px;
+    height: 110px;
+}
+
+.spinner.inline {
+    display: inline-block;
+    margin: 0;
+}

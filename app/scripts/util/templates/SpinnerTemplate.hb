@@ -1,0 +1,1 @@
+<div class="{{small}} {{large}} {{inline}} {{loading}} spinner"></div>

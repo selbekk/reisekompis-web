@@ -1,6 +1,8 @@
 (function() {
     'use strict';
 
+    var search = Reisekompis.search;
+
     Reisekompis.App = function(opts) {
 
         var searchController;
@@ -14,7 +16,7 @@
 
             // Show first view
 
-            searchController = new Reisekompis.SearchController({$el: opts.el});
+            searchController = new search.SearchController({$el: opts.el});
 
         };
 
