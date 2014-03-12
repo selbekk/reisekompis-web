@@ -14,7 +14,7 @@
 }
 
 .search-box .search-field-wrapper {
-    padding: 20px 0 5px 5px;
+    padding: 40px 0 10px 5px;
     border-bottom: 3px solid #fff;
 }
 
@@ -24,6 +24,7 @@
     padding: 0;
     margin: 0;
     width: 80%;
+    vertical-align: bottom;
 
     color: white;
     font-size: 200%;
@@ -36,7 +37,7 @@
 .search-box #search-button {
     display: inline-block;
     width: 14%;
-    margin: 0 0 10px 4%;
+    margin: 0 0 5px 4%;
     padding: 10px 0;
     border: 0;
     background-color: #f08080;
