@@ -15,21 +15,34 @@
         this.get = function(key) {
             var value = localStorage.getItem(key);
             if(!value) {
-                return false;
+                return;
             }
-
             return JSON.parse(value);
         };
 
         this.getAll = function() {
             var keys = Object.keys(localStorage);
             return $.map(keys, function(key) {
-                return localStorage.get(key);
+                return localStorage.getItem(key);
             });
+        };
+
+        this.getAllKeys = function() {
+            return Object.keys(localStorage);
         };
 
         this.remove = function(key) {
             localStorage.removeItem(key);
         };
+
+
+        var init = function() {
+            if(!localStorage) {
+                console.log('local storage not available');
+            }
+        };
+
+        init();
+
     };
 }());

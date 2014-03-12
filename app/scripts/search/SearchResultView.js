@@ -18,7 +18,16 @@
         };
 
         var render = function() {
-            $el.html(template(searchResults));
+            var savedStops = storageUtil.getAllKeys();
+            var preparedData = $.map(searchResults, function(result) {
+                if(_.contains(savedStops, result.id + '')) {
+                    result.selected = 'selected';
+                }
+
+                return result;
+            });
+
+            $el.html(template(preparedData));
 
             bindTemplateEvents();
         };
@@ -29,7 +38,7 @@
 
         var toggleStop = function() {
             var $stop = $(this);
-            var stopId = $stop.data('id');
+            var stopId = $stop.attr('id').substring(5);
 
             if($stop.hasClass('selected')) {
                 removeStop(stopId);
@@ -42,7 +51,7 @@
         };
 
         var saveStop = function(id) {
-            storageUtil.put(id, {});
+            storageUtil.put(id, 'stop');
         };
 
         var removeStop = function(id) {
