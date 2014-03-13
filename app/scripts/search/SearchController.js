@@ -14,7 +14,6 @@
         var view;
 
         var showSearchResults = function(event) {
-            //history.pushState({}, 'some text', '/search/');
 
             var opts = {
                 data: event.response,

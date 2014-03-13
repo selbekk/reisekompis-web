@@ -6,7 +6,8 @@
     "underscore": "~1.6.0",
     "handlebars": "~1.3.0",
     "font-awesome": "~4.0.3",
-    "Clear-Sans-Webfont": "git@github.com:resir014/Clear-Sans-Webfont.git"
+    "Clear-Sans-Webfont": "git@github.com:resir014/Clear-Sans-Webfont.git",
+    "routie": "~0.3.2"
   },
   "devDependencies": {}
 }
