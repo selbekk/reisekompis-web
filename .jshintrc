@@ -22,6 +22,7 @@
         "_": false,
         "Handlebars": false,
         "JST": false,
+        "routie": false,
         "Reisekompis": false
     }
 }

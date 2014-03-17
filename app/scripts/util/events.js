@@ -16,11 +16,35 @@
         };
     };
 
-    Reisekompis.events.ViewChanged = function(options) {
+    Reisekompis.events.DeparturesRequested = function() {
         return {
-            type: 'ViewChanged',
-            title: options.title,
-            newView: options.view
+            type: 'DeparturesRequested'
+        };
+    };
+
+    Reisekompis.events.DeparturesFetched = function(departures) {
+        return {
+            type: 'DeparturesFetched',
+            departures: departures
+        };
+    };
+
+    Reisekompis.events.ShowSearch = function() {
+        return {
+            type: 'ShowSearch'
+        };
+    };
+
+    Reisekompis.events.ShowDashboard = function() {
+        return {
+            type: 'ShowDashboard'
+        };
+    };
+
+    Reisekompis.events.UpdateHeader = function(title) {
+        return {
+            type: 'UpdateHeader',
+            title: title
         };
     };
 }());

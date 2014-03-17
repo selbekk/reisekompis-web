@@ -9,7 +9,7 @@
 
             localStorage.setItem(key, value);
 
-            // TODO: If no local storage, gracefully fall back
+            // TODO: If no local storage, gracefully fall back to cookies
         };
 
         this.get = function(key) {
@@ -23,7 +23,7 @@
         this.getAll = function() {
             var keys = Object.keys(localStorage);
             return $.map(keys, function(key) {
-                return localStorage.getItem(key);
+                return JSON.parse(localStorage.getItem(key));
             });
         };
 

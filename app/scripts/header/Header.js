@@ -32,7 +32,7 @@
         };
 
         var initEvents = function() {
-            $(document).on('ViewChanged', updateHeader);
+            $(document).on('UpdateHeader', updateHeader);
         };
 
         var init = function(pView) {

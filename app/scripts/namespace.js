@@ -6,5 +6,6 @@ Reisekompis = {
 
     header: {},
     search: {},
-    myStops: {}
+    myStops: {},
+    dashboard: {}
 };

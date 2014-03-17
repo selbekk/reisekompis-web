@@ -44,6 +44,7 @@
                 removeStop(stopId);
             }
             else {
+                // TODO: save complete stop object
                 saveStop(stopId);
             }
 

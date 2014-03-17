@@ -1,13 +1,14 @@
 (function() {
     'use strict';
 
-    var search = Reisekompis.search;
     var Header = Reisekompis.header.Header;
 
     Reisekompis.App = function(opts) {
 
         var header;
         var searchController;
+        var dashboardController;
+        var router;
 
         var init = function(opts) {
             var defaults = {
@@ -17,10 +18,15 @@
 
             opts = _.extend(defaults, opts);
 
-            // Show first view
-
-            searchController = new search.SearchController({$el: opts.el});
+            router = new Reisekompis.util.RoutingService();
             header = new Header(opts.headerEl);
+
+            searchController = new Reisekompis.search.SearchController({$el: opts.el});
+            dashboardController = new Reisekompis.dashboard.DashboardController({$el: opts.el});
+
+            if( !window.location.hash ) {
+                routie('search');
+            }
         };
 
         init(opts);

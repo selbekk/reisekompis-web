@@ -16,6 +16,19 @@
             });
         };
 
+        this.post = function(url, postData, type, callback) {
+            return $.ajax({
+                type: 'POST',
+                url: url,
+                data: JSON.serialize(postData),
+                dataType: 'json',
+                success: function(data) {
+                    callback(deserialize(data, type));
+                },
+                error: ajaxErrorHandler
+            });
+        };
+
         var deserialize = function(data, Type) {
             if( data instanceof Array ) {
                 return $.map(data, function(item) {
