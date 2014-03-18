@@ -238,32 +238,6 @@ module.exports = function (grunt) {
             }
         },
 
-        // By default, your `index.html`'s <!-- Usemin block --> will take care of
-        // minification. These next options are pre-configured if you do not wish
-        // to use the Usemin blocks.
-        // cssmin: {
-        //     dist: {
-        //         files: {
-        //             '<%= config.dist %>/styles/main.css': [
-        //                 '.tmp/styles/{,*/}*.css',
-        //                 '<%= config.app %>/styles/{,*/}*.css'
-        //             ]
-        //         }
-        //     }
-        // },
-        // uglify: {
-        //     dist: {
-        //         files: {
-        //             '<%= config.dist %>/scripts/scripts.js': [
-        //                 '<%= config.dist %>/scripts/scripts.js'
-        //             ]
-        //         }
-        //     }
-        // },
-        // concat: {
-        //     dist: {}
-        // },
-
         // Copies remaining files to places other tasks can use
         copy: {
             dist: {
@@ -315,10 +289,18 @@ module.exports = function (grunt) {
                     '<%= config.app %>/scripts/templates.js': ['**/templates/*.hb']
                 }
             }
+        },
+
+        // Check that there aren't any spooky dependencies
+        retire: {
+            js: ['app/bower_components/*'],
+            options: {
+            }
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-handlebars');
+    grunt.loadNpmTasks('grunt-retire');
 
     grunt.registerTask('serve', function (target) {
         if (target === 'dist') {
@@ -329,6 +311,7 @@ module.exports = function (grunt) {
             'clean:server',
             'concurrent:server',
             'autoprefixer',
+            'handlebars',
             'connect:livereload',
             'watch'
         ]);
@@ -356,6 +339,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('build', [
         'clean:dist',
+        'retire',
         'useminPrepare',
         'concurrent:dist',
         'autoprefixer',
